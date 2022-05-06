@@ -58,7 +58,7 @@ module.exports.getUserById = getUserById;
 const updateUser = async function (req, res) {
     const id = req.params.user_id;
     const objectUser=req.body
-    User.findOneAndUpdate({"id":id}, objectUser, function (err, result) {
+    User.findOneAndUpdate({"_id":id}, objectUser, function (err, result) {
         if (err) {
             res.status(500).send({ message: "Could not update user with id:" + id });
         }
